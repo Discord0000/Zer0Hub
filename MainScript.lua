@@ -15,7 +15,10 @@ local function isMobileDevice()
   return UserInputService.TouchEnabled and not UserInputService.MouseEnabled
 end
 if isMobileDevice() then
-  getgenv().http_request = nil
+setreadonly(getgenv(), false)  
+getgenv().http_request = nil
+  
+  setreadonly(getgenv().syn, false)
   if getgenv().syn then getgenv().syn.request = nil end
 end
 
