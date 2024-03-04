@@ -10,6 +10,13 @@ local function Invite()
     end
   end
 end
+local function isMobileDevice()
+  return UserInputService.TouchEnabled and not UserInputService.MouseEnabled
+end
+if isMobileDevice() then
+  getgenv().http_request = nil
+  if getgenv().syn then getgenv().syn.request = nil end
+end
 
 local discordinv = "https://discord.gg/tgh3dtSEW7"
 local d
