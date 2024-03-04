@@ -11,6 +11,7 @@ local function Invite()
   end
 end
 local function isMobileDevice()
+  local UserInputService = game:GetService("UserInputService")
   return UserInputService.TouchEnabled and not UserInputService.MouseEnabled
 end
 if isMobileDevice() then
